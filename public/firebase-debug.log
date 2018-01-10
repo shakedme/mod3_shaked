@@ -1,0 +1,32 @@
+[debug] [2018-01-10T19:03:14.465Z] ----------------------------------------------------------------------
+[debug] [2018-01-10T19:03:14.465Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Shaked\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2018-01-10T19:03:14.465Z] CLI Version:   3.16.0
+[debug] [2018-01-10T19:03:14.465Z] Platform:      win32
+[debug] [2018-01-10T19:03:14.465Z] Node Version:  v8.9.1
+[debug] [2018-01-10T19:03:14.465Z] Time:          Wed Jan 10 2018 15:03:14 GMT-0400 (SA Western Standard Time)
+[debug] [2018-01-10T19:03:14.465Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-10T19:03:14.465Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-10T19:03:14.465Z] > authorizing via signed-in user
+[debug] [2018-01-10T19:03:14.465Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/shaked-nysl-app  
+  
+ Wed Jan 10 2018 15:03:14 GMT-0400 (SA Western Standard Time)
+[debug] [2018-01-10T19:03:15.355Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-10T19:03:15.355Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/shaked-nysl-app/tokens  
+  
+ Wed Jan 10 2018 15:03:15 GMT-0400 (SA Western Standard Time)
+[debug] [2018-01-10T19:03:16.059Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'C:\Users\Shaked\Desktop\Sites\Mod3\mod3_shaked'...
+[info] 
+[debug] [2018-01-10T19:03:16.059Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/shaked-nysl-app  
+  
+ Wed Jan 10 2018 15:03:16 GMT-0400 (SA Western Standard Time)
+[debug] [2018-01-10T19:03:17.278Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-10T19:03:17.293Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/352336538584/clients/_:getWebAppConfig  
+  
+ Wed Jan 10 2018 15:03:17 GMT-0400 (SA Western Standard Time)
+[debug] [2018-01-10T19:03:18.090Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public
+[info] +  hosting: Local server: http://localhost:5000
+
