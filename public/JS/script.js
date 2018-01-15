@@ -36,7 +36,7 @@ function MainHandler() {
     //Click event for navigation
 
     this.bottomNav = function() {
-        $('nav ul li, #register_btn, #next_game, #register_btn_top, #contact_btn').on('click', function() {
+        $('nav ul li, #register_btn, #next_game, #register_btn_top, #contact_btn, #rules_btn').on('click', function() {
             $('section').hide();
             var content = $(this).data('content');
             $('#' + content).show();
