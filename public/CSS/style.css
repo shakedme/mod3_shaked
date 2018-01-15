@@ -159,19 +159,20 @@
 
     #next_game {
         border: 1px solid black;
-        background: rgba(5, 33, 55, 0.2);
+        background: url('../Images/field.jpg');
         margin-top: 1.5em;
         margin-bottom: 2em;
         border-radius: 1em;
+        color: white;
     }
 
     #rules_page h5,
-    h4,
-    h3 {
+    #rules_page h4,
+    #rules_page h3 {
         text-align: center;
     }
 
-    #rules_page li,
+    #rules_page li, #rules_page
     p {
         text-align: justify;
     }
@@ -180,4 +181,18 @@
         -webkit-box-shadow: 0px 1px 10px 6px rgba(0, 0, 0, 1);
         -moz-box-shadow: 0px 1px 10px 6px rgba(0, 0, 0, 1);
         box-shadow: 0px 1px 10px 6px rgba(0, 0, 0, 1);
+    }
+
+    #home_page a, #register_page a {
+        background: black;
+        color: white;
+    }
+
+    #login_div {
+        background: url('../Images/field.jpg');
+        border: 1px solid black;
+        border-radius: 1em;
+        padding: 0;
+        margin: 0;
+        color: white;
     }
