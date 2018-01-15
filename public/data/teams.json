@@ -1,0 +1,115 @@
+ {
+     "teams": [
+         {
+             "Name": "Ashes",
+             "Wins": "11",
+             "Losses": "0",
+             "Position": "1",
+             "Coach": "Ronald Weasley",
+             "Image" : "../Images/1.png",
+             "seniority" : "8 Years"
+         },
+         {
+             "Name": "Maverix",
+             "Wins": "10",
+             "Losses": "1",
+             "Position": "2",
+             "Coach": "Tom Denton",
+             "Image" : "../Images/2.png",
+             "seniority" : "8 Years"
+         },
+         {
+             "Name": "Poppers",
+             "Wins": "9",
+             "Losses": "2",
+             "Position": "3",
+             "Coach": "John Doe",
+             "Image" : "../Images/3.png",
+             "seniority" : "7 Years"
+         },
+         {
+             "Name": "Bubbles",
+             "Wins": "8",
+             "Losses": "3",
+             "Position": "4",
+             "Coach": "Tyler Durden",
+             "Image" : "../Images/4.png",
+             "seniority" : "6 Years"
+         },
+         {
+             "Name": "Chubbies",
+             "Wins": "7",
+             "Losses": "4",
+             "Position": "5",
+             "Coach": "Harry Potter",
+             "Image" : "../Images/5.png",
+             "seniority" : "2 Years"
+         },
+         {
+             "Name": "Pikachu",
+             "Wins": "6",
+             "Losses": "5",
+             "Position" : "6",
+             "Coach": "Albus Fumbledor",
+             "Image" : "../Images/6.png",
+             "seniority" : "8 Years"
+         },
+         {
+             "Name": "Noobs",
+             "Wins": "5",
+             "Losses": "6",
+             "Position": "7",
+             "Coach": "Isaac Newton",
+             "Image" : "../Images/7.png",
+             "seniority" : "6 Years"
+         },
+         {
+             "Name": "Hazelnut",
+             "Wins": "4",
+             "Losses": "7",
+             "Position": "8",
+             "Coach": "Danny Darko",
+             "Image" : "../Images/8.png",
+             "seniority" : "5"
+         },
+         {
+             "Name": "Artemis",
+             "Wins": "3",
+             "Losses": "8",
+             "Position": "9",
+             "Coach": "Babe Ruth",
+             "Image" : "../Images/9.png",
+             "seniority" : "5 Years"
+         },
+         {
+             "Name": "Babes",
+             "Wins": "2",
+             "Losses": "9",
+             "Position": "10",
+             "Coach": "Mike Rutherford",
+             "Image" : "../Images/10.png",
+             "seniority" : "3 Years"
+         },
+         {
+             "Name": "Buttercups",
+             "Wins": "1",
+             "Losses": "10",
+             "Position": "11",
+             "Coach": "Sally Davis",
+             "Image" : "../Images/20.png",
+             "seniority" : "3 Years"
+         },
+         {
+             "Name": "Siths",
+             "Wins": "0",
+             "Losses": "11",
+             "Position": "12",
+             "Coach": "Hans Zimmerman",
+             "Image" : "../Images/12.png",
+             "seniority" : "5 Years"
+         }
+
+
+
+     ]
+ }

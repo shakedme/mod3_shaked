@@ -4,13 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm-run-all --parallel dev:css dev:server",
+    "dev": "npm-run-all --parallel dev:css dev:server dev:proxy",
+    "dev:proxy" : "live-server --proxy=localhost:5000 && open http://localhost:8080",
     "dev:server": "firebase serve",
-    "dev:css": "node-sass -w SCSS/style.scss CSS/style.css"
+    "dev:css": "node-sass -w SCSS/style.scss CSS/style.css",
+    "server" : "live-server"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "jquery": "^3.2.1",
     "live-server": "^1.2.0",
     "node-sass": "^4.7.2",
     "run-all": "^1.0.1"
