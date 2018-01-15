@@ -1,0 +1,54 @@
+[debug] [2018-01-15T13:54:55.108Z] ----------------------------------------------------------------------
+[debug] [2018-01-15T13:54:55.108Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Shaked\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2018-01-15T13:54:55.108Z] CLI Version:   3.16.0
+[debug] [2018-01-15T13:54:55.108Z] Platform:      win32
+[debug] [2018-01-15T13:54:55.108Z] Node Version:  v8.9.1
+[debug] [2018-01-15T13:54:55.108Z] Time:          Mon Jan 15 2018 14:54:55 GMT+0100 (Mitteleuropäische Zeit)
+[debug] [2018-01-15T13:54:55.108Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-01-15T13:54:55.108Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-01-15T13:54:55.108Z] > authorizing via signed-in user
+[debug] [2018-01-15T13:54:55.123Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/shaked-nysl-app  
+  
+ Mon Jan 15 2018 14:54:55 GMT+0100 (Mitteleuropäische Zeit)
+[debug] [2018-01-15T13:54:56.076Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-15T13:54:56.076Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/shaked-nysl-app/tokens  
+  
+ Mon Jan 15 2018 14:54:56 GMT+0100 (Mitteleuropäische Zeit)
+[debug] [2018-01-15T13:54:56.780Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'shaked-nysl-app'...
+[info] 
+[info] i  deploying database, storage, hosting
+[info] i  database: checking rules syntax...
+[debug] [2018-01-15T13:54:57.827Z] >>> HTTP REQUEST PUT https://shaked-nysl-app.firebaseio.com/.settings/rules.json?dryRun=true  
+ {
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+ 
+ Mon Jan 15 2018 14:54:57 GMT+0100 (Mitteleuropäische Zeit)
+[debug] [2018-01-15T13:54:58.733Z] <<< HTTP RESPONSE 200
+[info] +  database: rules syntax for database shaked-nysl-app is valid
+[debug] [2018-01-15T13:54:58.733Z] >>> HTTP REQUEST GET https://appengine.googleapis.com/v1/apps/shaked-nysl-app  
+  
+ Mon Jan 15 2018 14:54:58 GMT+0100 (Mitteleuropäische Zeit)
+[debug] [2018-01-15T13:54:59.921Z] <<< HTTP RESPONSE 200
+[info] i  storage: checking storage.rules for compilation errors...
+[debug] [2018-01-15T13:54:59.921Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/shaked-nysl-app:test  
+ { source: { files: [ [Object] ] } } 
+ Mon Jan 15 2018 14:54:59 GMT+0100 (Mitteleuropäische Zeit)
+[debug] [2018-01-15T13:55:00.874Z] <<< HTTP RESPONSE 200
+[info] +  storage: rules file storage.rules compiled successfully
+[info] i  storage: uploading rules storage.rules...
+[debug] [2018-01-15T13:55:00.889Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/shaked-nysl-app/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Mon Jan 15 2018 14:55:00 GMT+0100 (Mitteleuropäische Zeit)
+[debug] [2018-01-15T13:55:01.999Z] <<< HTTP RESPONSE 200
+[debug] [2018-01-15T13:55:01.999Z] [rules] created ruleset projects/shaked-nysl-app/rulesets/0fbeedcd-9d71-4f5c-b15f-ad236d82f50b
+[info] i  hosting: preparing public directory for upload...
+[debug] [2018-01-15T13:55:02.321Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/shaked-nysl-app/uploads/-L2u5W5b6P7M1XK1G24L?fileCount=57&message=  
+  
+ Mon Jan 15 2018 14:55:02 GMT+0100 (Mitteleuropäische Zeit)
