@@ -1,9 +1,11 @@
     body {
         margin: 0;
         padding-top: 4em;
+        background-image: url('../Images/background.jpg');
+        background-size: cover;
         padding-bottom: 3.5em!important;
-        background-image: url("../Images/background.jpg");
-        font-family: 'Merriweather Sans', sans-serif!important;
+        font-family: 'Karla', sans-serif!important;
+        color: black!important;
     }
 
     #header {
@@ -13,15 +15,17 @@
         width: 100%;
         background: black;
         z-index: 1;
-        -webkit-box-shadow: 0px 4px 18px 6px rgba(0, 0, 0, 1);
-        -moz-box-shadow: 0px 4px 18px 6px rgba(0, 0, 0, 1);
-        box-shadow: 0px 4px 18px 6px rgba(0, 0, 0, 1);
+        border-bottom: 1px solid black;
     }
 
     h1 {
-        color: white!important;
         text-align: center;
+        color: white!important;
         margin-top: 0.2em!important;
+    }
+
+    h3 {
+        margin-top: 0.5em!important;
     }
 
     #nysl_logo {
@@ -35,35 +39,26 @@
         width: 2em;
     }
 
-    nav ul {
+    #footer {
         position: fixed;
         bottom: 0;
-        list-style: none;
         background-color: black !important;
-        text-align: center;
         padding: 0;
+        border-top: 1px solid black;
         margin-bottom: 0 !important;
-        height: 3.5em !important;
+        height: 4em !important;
         width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
     }
 
-    nav ul li {
-        padding: 0 1.25em 0 1.25em;
+    #footer span {
+        font-size: 2em;
         color: white;
-        margin-top: 0.5em !important;
-    }
-
-    nav ul li span:active {
-        color: green;
+        margin-top: 0.5em;
     }
 
     #team_detail ul {
         list-style: none;
         text-align: justify;
-        font-family:
     }
 
     #teams_page img {
@@ -89,7 +84,8 @@
     #teams_detail_page,
     #stats_page,
     #contact_page,
-    #rules_page {
+    #rules_page,
+    #about_page {
         display: none;
     }
 
@@ -105,6 +101,10 @@
         font-size: 1.5em;
     }
 
+    #stats_body img {
+        width: 1.5em;
+    }
+
     #stats_page th {
         padding-left: 0em;
         padding-right: 0.2em;
@@ -116,7 +116,7 @@
 
     .team_image {
         width: 10em;
-        margin-bottom: 3em;
+        margin-bottom: 1.5em;
     }
 
     #games_page a {
@@ -126,7 +126,6 @@
 
     #hamburger {
         margin-top: 0.5em;
-        background: black;
         position: fixed;
         top: 0;
         right: 0;
@@ -160,18 +159,18 @@
         border: none;
     }
 
-    #contact_page a {
+    #contact_page a,
+    #next_game a {
         color: black;
     }
 
     #next_game {
-        border: 1px solid black;
-        background: url('../Images/field.jpg');
-        background-size: cover;
-        margin-top: 1.5em;
-        margin-bottom: 2em;
-        border-radius: 1em;
-        color: white;
+        color: black;
+        margin-bottom: 0;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        border-bottom: 1px solid black;
     }
 
     #rules_page h5,
@@ -180,28 +179,49 @@
         text-align: center;
     }
 
-    #rules_page li, #rules_page
-    p {
+    #rules_page li,
+    #rules_page p {
         text-align: justify;
     }
 
     #footer ul {
-        -webkit-box-shadow: 0px 1px 10px 6px rgba(0, 0, 0, 1);
-        -moz-box-shadow: 0px 1px 10px 6px rgba(0, 0, 0, 1);
-        box-shadow: 0px 1px 10px 6px rgba(0, 0, 0, 1);
+        border-top: 1px solid black;
     }
 
-    #home_page a, #register_page a {
+    #home_page #login_div a,
+    #register_page a {
         background: black;
         color: white;
     }
 
     #login_div {
-        background: url('../Images/field2.jpg');
-        background-size: cover;
-        border: 1px solid black;
-        border-radius: 1em;
-        padding: 0 0 1em;
+        /*  background: url('../Images/field2.jpg');
+        background-size: cover;*/
+        border-bottom: 1px solid black;
+        padding-bottom: 0.5em;
+        color: black;
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+    #home_page_container {
+        width: 100%;
+        padding: 0;
         margin: 0;
-        color: white;
+    }
+
+    #games_page hr {
+        margin-top: 0;
+    }
+
+    #news p {
+        margin-left: 0.5em;
+    }
+
+    #back_btn {
+        background-color: black;
+        padding: 1em;
+        margin-right: -17em;
+        margin-bottom: -2em;
     }

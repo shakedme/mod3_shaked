@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="manifest" type="/manifest.json" href="manifest.json">
     <link rel="shortcut icon" sizes="128x128" href="../Images/nysl_logo.png">
     <link rel="shortcut icon" sizes="196x196" href="../Images/nysl_logo.png">
     <link rel="apple-touch-icon" href="../Images/nysl_logo.png">
@@ -13,13 +14,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NYSL App</title>
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
     <!-- update the version number as needed -->
-      <script defer src="/__/firebase/4.8.1/firebase-app.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-app.js"></script>
     <!-- include only the Firebase features as you need -->
-     <script defer src="/__/firebase/4.8.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-auth.js"></script>
     <script defer src="/__/firebase/4.8.1/firebase-database.js"></script>
     <script defer src="/__/firebase/4.8.1/firebase-messaging.js"></script>
     <script defer src="/__/firebase/4.8.1/firebase-storage.js"></script>
@@ -37,6 +38,8 @@
             <div id="dropdown_menu" class="dropdown-menu dropdown-menu-right text-center">
                 <button data-content="register_page" id="register_btn_top" class="btn btn-primary dropdown-item" type="button">Register</button>
                 <hr>
+                <button data-content="about_page" id="about_btn" class="btn btn-primary dropdown-item" type="button">About</button>
+                <hr>
                 <button data-content="contact_page" id="contact_btn" class="btn btn-primary dropdown-item" type="button">Contact</button>
                 <hr>
                 <button data-content="rules_page" id="rules_btn" class="btn btn-primary dropdown-item" type="button">FIFA Rules</button>
@@ -45,7 +48,7 @@
             </div>
         </div>
         <h1>NYSL</h1>
-        <img id="nysl_logo" alt="logo" src="../Images/nysl_logo.png">
+        <img id="nysl_logo" data-content="home_page" alt="logo" src="../Images/nysl_logo.png">
     </nav>
     <!-- HOME PAGE -->
     <!-- 
@@ -53,35 +56,37 @@
 
      -->
     <section id="home_page">
-        <!-- Next Game Section; CLICK to go to GAMES page. -->
-        <!-- \
+        <div id="home_page_container" class="container">
+            <!-- Next Game Section; CLICK to go to GAMES page. -->
+            <!-- \
+
+
          -->
-        <div class="container">
-            <article data-content="games_page" id="next_game">
-                <header>
-                    <h3 class="text-center"><strong>Next Game</strong></h3>
-                </header>
-                <div class="row">
+           <!--  <article>
+                <div data-content="games_page" class="row" id="next_game">
+                    <header>
+                        <h3 class="text-center"><strong>Next Game</strong></h3>
+                    </header>
                     <div class="col-xs-3 text-center"><img alt="logo" class="nextgame_logo" src="../Images/12.png"> Siths
                     </div>
                     <div class="col-xs-6 text-center">
                         <p>25.5.2018
-                            <br> Northbrook High
+                            <br> <a href="https://www.google.com/maps/place/Niles+North+High+School/@42.0597763,-87.7562329,17z/data=!3m1!4b1!4m5!3m4!1s0x880fc58ba2e3b6ef:0x6e3de738d8c4baa0!8m2!3d42.0597763!4d-87.7540442">Niles North High</a>
                             <br> 17:30
                         </p>
                     </div>
                     <div class="col-xs-3 text-center"><img alt="logo" class="nextgame_logo" src="../Images/10.png">Babes</div>
                 </div>
-            </article>
+            </article> -->
             <!-- Login Section -->
             <!-- 
 
 
              -->
             <div class="row" id="login_div">
-                <div class="col-xs-12">
+                <div id="login_12" class="col-xs-12">
                     <div class="form-login">
-                        <h4 class="text-center">Welcome!</h4>
+                        <h3 class="text-center"><strong>Welcome</strong></h3>
                         <input type="text" id="userNameLogin" class="form-control input-xs chat-input" placeholder="Username" />
                         <br>
                         <input type="password" id="userPasswordLogin" class="form-control input-xs chat-input" placeholder="Password" />
@@ -94,6 +99,15 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="container" id="news">
+                <h3 class="text-center"><strong>News and Events</strong></h3>
+            <h4><strong>August 4</strong></h4>
+            <p>NYSL Fundraiser</p>
+            <h4><strong>August 16</strong></h4>
+           <p>Meet the Teams</p>
+            <h4><strong>September 1</strong></h4>
+            <p>First Game of the Season (Check Game Schedule for details)</p>
             </div>
         </div>
     </section>
@@ -132,55 +146,58 @@
      -->
     <section id="games_page">
         <header>
-            <h3 class="text-center"><strong>Upcoming Games</strong></h3></header>
+            <h3 class="text-center"><strong>Upcoming Matches</strong></h3></header>
         <br>
         <div class="container">
             <div class="row">
-                <div data-name="Siths" class="col-xs-3 team_specific"><img alt="logo" class="nextgame_logo text-center" src="../Images/12.png"> Siths
+                <div data-name="Siths" class="col-xs-3 team_specific text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/12.png"> Siths
                 </div>
                 <div class="col-xs-6 text-center">
                     <p>25.5.2018
-                        <br> <a href="https://www.google.com/maps/place/Niles+North+High+School/@42.0597763,-87.7562329,17z/data=!3m1!4b1!4m5!3m4!1s0x880fc58ba2e3b6ef:0x6e3de738d8c4baa0!8m2!3d42.0597763!4d-87.7540442">Niles North High</a>
+                        <br> <a href="https://www.google.com/maps/place/Niles+North+High+School/@42.0597763,-87.7562329,17z/data=!3m1!4b1!4m5!3m4!1s0x880fc58ba2e3b6ef:0x6e3de738d8c4baa0!8m2!3d42.0597763!4d-87.7540442">Niles North High <span class="   glyphicon glyphicon-map-marker"></span> </a>
                         <br> 17:30</div>
-                <div data-name="Babes" class="col-xs-3 team_specific"><img alt="logo" class="nextgame_logo text-center" src="../Images/10.png"> Babes</div>
+                <div data-name="Babes" class="col-xs-3 team_specific  text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/10.png"> Babes</div>
             </div>
+            <hr>
             <div class="row">
-                <div data-name="Poppers" class="col-xs-3 team_specific"><img alt="logo" class="nextgame_logo text-center" src="../Images/3.png"> Poppers
+                <div data-name="Poppers" class="col-xs-3 team_specific  text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/3.png"> Poppers
                 </div>
                 <div class="col-xs-6 text-center">
                     <p>30.5.2018
-                        <br><a href="https://www.google.com/maps/place/Niles+West+High+School/@42.0258597,-87.7739516,17z/data=!3m1!4b1!4m5!3m4!1s0x880fcf2de4dfda25:0xb2bb9cb94144193f!8m2!3d42.0258557!4d-87.7717629">Niles West High</a>
+                        <br><a href="https://www.google.com/maps/place/Niles+West+High+School/@42.0258597,-87.7739516,17z/data=!3m1!4b1!4m5!3m4!1s0x880fcf2de4dfda25:0xb2bb9cb94144193f!8m2!3d42.0258557!4d-87.7717629">Niles West High <span class="   glyphicon glyphicon-map-marker"></span> </a>
                         <br> 14:30</div>
-                <div data-name="Artemis" class="col-xs-3 team_specific"><img alt="logo" class="nextgame_logo text-center" src="../Images/9.png"> Artemis</div>
+                <div data-name="Artemis" class="col-xs-3 team_specific  text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/9.png"> Artemis</div>
             </div>
+            <hr>
             <div class="row">
-                <div data-name="Chubbies" class="col-xs-3 team_specific"><img alt="logo" class="nextgame_logo text-center" src="../Images/5.png"> Chubbies
+                <div data-name="Chubbies" class="col-xs-3 team_specific  text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/5.png"> Chubbies
                 </div>
                 <div class="col-xs-6 text-center">
                     <p>2.6.2018
-                        <br><a href="https://www.google.com/maps/place/A+J+Katzenmaier+Elementary+School/@42.3258724,-87.8649288,17z/data=!3m1!4b1!4m5!3m4!1s0x880f932fbc6ba7cd:0xcf2bbe275c6da815!8m2!3d42.3258685!4d-87.8627401">AJ Katzenmaier</a>
+                        <br><a href="https://www.google.com/maps/place/A+J+Katzenmaier+Elementary+School/@42.3258724,-87.8649288,17z/data=!3m1!4b1!4m5!3m4!1s0x880f932fbc6ba7cd:0xcf2bbe275c6da815!8m2!3d42.3258685!4d-87.8627401">AJ Katzenmaier <span class="   glyphicon glyphicon-map-marker"></span> </a>
                         <br> 12:30</div>
-                <div data-name="Maverix" class="col-xs-3 team_specific"><img alt="logo" class="nextgame_logo text-center" src="../Images/2.png"> Maverix</div>
+                <div data-name="Maverix" class="col-xs-3 team_specific  text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/2.png"> Maverix</div>
             </div>
+            <hr>
             <div class="row">
-                <div data-name="Hazelnut" class="col-xs-3 team_specific"><img alt="logo" class="nextgame_logo text-center" src="../Images/8.png"> Hazelnut
+                <div data-name="Hazelnut" class="col-xs-3 team_specific text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/8.png"> Hazelnut
                 </div>
                 <div class="col-xs-6 text-center">
                     <p>6.6.2018
-                        <br><a href="https://www.google.com/maps/place/North+Chicago+Community+High+School/@42.3278655,-87.8553269,17z/data=!3m1!4b1!4m5!3m4!1s0x880fecd3085aa3bd:0x54f2728b0f77d756!8m2!3d42.3278616!4d-87.8531382"> North Chicago</a>
+                        <br><a href="https://www.google.com/maps/place/North+Chicago+Community+High+School/@42.3278655,-87.8553269,17z/data=!3m1!4b1!4m5!3m4!1s0x880fecd3085aa3bd:0x54f2728b0f77d756!8m2!3d42.3278616!4d-87.8531382"> North Chicago <span class="   glyphicon glyphicon-map-marker"></span> </a>
                         <br> 17:30</div>
-                <div data-name="Noobs" class="col-xs-3 team_specific"><img alt="logo" class="nextgame_logo text-center" src="../Images/7.png"> Noobs</div>
+                <div data-name="Noobs" class="col-xs-3 team_specific text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/7.png"> Noobs</div>
             </div>
+            <hr>
             <div class="row">
-                <div data-name="Ashes" class="col-xs-3 team_specific"><img alt="logo" class="nextgame_logo text-center" src="../Images/1.png"> Ashes
+                <div data-name="Ashes" class="col-xs-3 team_specific text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/1.png"> Ashes
                 </div>
                 <div class="col-xs-6 text-center">
                     <p>10.6.2018
-                        <br><a href="https://www.google.com/maps/place/South+Elementary+School/@42.3170709,-87.8567817,17z/data=!3m1!4b1!4m5!3m4!1s0x880feccac2135a21:0x8ce88e90b96bbec1!8m2!3d42.317067!4d-87.854593">South Elementary</a>
+                        <br><a href="https://www.google.com/maps/place/South+Elementary+School/@42.3170709,-87.8567817,17z/data=!3m1!4b1!4m5!3m4!1s0x880feccac2135a21:0x8ce88e90b96bbec1!8m2!3d42.317067!4d-87.854593">South Elementary <span class="   glyphicon glyphicon-map-marker"></span></a>
                         <br> 13:00</div>
-                <div data-name="Bubbles" class="col-xs-3 team_specific"><img alt="logo" class="nextgame_logo text-center" src="../Images/4.png"> Bubbles</div>
+                <div data-name="Bubbles" class="col-xs-3 team_specific text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/4.png"> Bubbles</div>
             </div>
-            <p class="text-center">Click location to open navigation.</p>
         </div>
     </section>
     <!-- TEAM PAGE -->
@@ -231,12 +248,16 @@
     <!-- 
 
      -->
-    <section id="teams_detail_page" class="container text-center">
+    <section id="teams_detail_page" class="text-center">
         <header>
             <h3><strong>Team Details</strong></h3></header>
         <img alt="logo" id="team_detail_image" class="team_image" src="../Images/1.png">
         <ul id="detail">
         </ul>
+
+
+        <button class="btn btn-primary" id="back_btn">Back</button>
+
     </section>
     <!-- STATISTICS PAGE -->
     <!-- 
@@ -250,6 +271,7 @@
             <table class="table">
                 <thead>
                     <th>Position</th>
+                    <th>Logo</th>
                     <th>Team</th>
                     <th>Wins</th>
                     <th>Losses</th>
@@ -273,6 +295,23 @@
                 <br> Phone: 0543512375</p>
         </div>
     </section>
+<!-- About Page
+
+
+
+ -->
+ <section id="about_page">
+     <div class="container">
+         <h3 class="text-center"><strong>Mission</strong></h3>
+                <p>To support young athletes living in Chicago's northside neighborhoods, who have an interest in learning and playing soccer, with opportunities to learn and practice skills related ot the game of soccer, specifically those skills around team cooperation and good sportsmanship.</p>
+                <h3 class="text-center"><strong>Vision</strong></h3>
+                <p>The Northside Youth Soccer League aspires to develop strong, well-rounded, and mindful athletes through the building of character, self-discipline, and leadership.</p>
+                 <h3 class="text-center"><strong>General Information</strong></h3>
+                <p>The Northside Youth Soccer League was established in 1996 to provide athletes residing in Chicago's northside neighborhoods an environment in which to learn and play soccer. To be a member of NYSL, you must be between the ages of 4-12 and reside in a Chicago northside neighborhood. NYSL is ran by a small full-time staff, and relies on the generous volunteer time of parents and previous league members.</p>
+     </div>
+ </section>
+
+
     <!-- FIFA Rules Page
 
 
@@ -383,16 +422,16 @@
 
      -->
     <nav id="footer">
-        <ul>
-            <li data-content="home_page" id="home_btn"><span id="home" class="glyphicon glyphicon-home"></span>Home</li>
-            <li data-content="teams_page" id="teams_btn"><span class="    glyphicon glyphicon-user"></span>Teams</li>
-            <li data-content="games_page" id="games_btn"><span class="glyphicon glyphicon-calendar"></span>Games</li>
-            <li data-content='stats_page' id="stats_btn">
-                <span class="glyphicon glyphicon-signal"></span> Stats
-            </li>
-        </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-3 text-center"> <span data-content="home_page" id="home_btn" class="glyphicon glyphicon-home"></span></div>
+                <div class="col-xs-3 text-center"> <span data-content="teams_page" id="teams_btn" class="glyphicon glyphicon-user"></span></div>
+                <div class="col-xs-3 text-center"> <span data-content="games_page" id="games_btn" class="glyphicon glyphicon-calendar"></span></div>
+                <div class="col-xs-3 text-center"> <span data-content='stats_page' id="stats_btn" class="glyphicon glyphicon-signal"></span></div>
+            </div>
+        </div>
     </nav>
-     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
     <script type="text/javascript" src="JS/jquery.min.js">
     </script>
     <script type="text/javascript" src="JS/bootstrap.min.js"></script>

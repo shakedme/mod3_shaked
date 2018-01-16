@@ -1,0 +1,22 @@
+{
+    "short_name": "NYSL",
+    "name": "Northside Youth Soccer League",
+    "background_color": "#2196F3",
+    "icons": [
+    {
+        "src": "launcher-icon-1x.png",
+        "type": "Images/nysl_logo.png",
+        "sizes": "48x48"
+    },
+    {
+        "src": "launcher-icon-2x.png",
+        "type": "Images/nysl_logo.png",
+        "sizes": "144x144"
+    },
+    {
+        "src": "launcher-icon-4x.png",
+        "type": "Images/nysl_logo.png",
+        "sizes": "192x192"
+    }],
+    "start_url": "index.html?launcher=true"
+}

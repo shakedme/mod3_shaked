@@ -13,8 +13,25 @@ function MainHandler() {
             that.getStats();
             that.bottomNav();
             that.teamsNav();
+            that.backButton();
 
         });
+    };
+
+    this.backButton = function() {
+        $('.team_specific').on('click', function() {
+            window.location.hash = "team";
+        });
+        $('#back_btn').on('click', function() {
+            window.history.back();
+        });
+
+        window.onhashchange = function() {
+            if (window.location.hash === '') {
+                $('#teams_detail_page').hide('slow');
+                $('#teams_page').show('slow');
+            };
+        };
     };
 
     //Appending league stats to table.
@@ -23,7 +40,9 @@ function MainHandler() {
         var table = [];
         $.each(this.teamData.teams, function(i, e) {
             var row = $('<tr>');
-            row.append($('<td>').text(e.Position));	
+            row.append($('<td>').text(e.Position));
+            var img = $('<img>').attr('src', e.Image);
+            row.append($('<td>').html(img));
             row.append($('<td>').addClass('justify_name, team_specific').data('name', e.Name).text(e.Name));
             row.append($('<td>').text(e.Wins));
             row.append($('<td>').text(e.Losses));
@@ -33,24 +52,24 @@ function MainHandler() {
         $('#stats_body').append(table);
     };
 
+
     //Click event for navigation
 
     this.bottomNav = function() {
-        $('nav ul li, #register_btn, #next_game, #register_btn_top, #contact_btn, #rules_btn').on('click', function() {
-            $('section').hide();
+        $('#footer span, #about_btn, #nysl_logo, #register_btn, #next_game, #register_btn_top, #contact_btn, #rules_btn').on('click', function() {
             var content = $(this).data('content');
-            $('#' + content).show();
+            $('section').hide('slow');
+            $('#' + content).show('slow');
         });
     };
-
     //Appending team stats to team_detail page, according to team clicked 
 
     this.teamsNav = function() {
-    	var that = this;
+        var that = this;
         $('.team_specific').on('click', function() {
-            $('section').hide();
+            $('section').hide('slow');
             var myTeam = $(this).data('name');
-            $('#teams_detail_page').show();
+            $('#teams_detail_page').show('slow');
             $.each(that.teamData.teams, function(i, e) {
                 if (e.Name === myTeam) {
                     $('#detail').html('');
