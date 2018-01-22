@@ -1,227 +1,283 @@
-    body {
-        margin: 0;
-        padding-top: 4em;
-        background-image: url('../Images/background.jpg');
-        background-size: cover;
-        padding-bottom: 3.5em!important;
-        font-family: 'Karla', sans-serif!important;
-        color: black!important;
-    }
+html {
+    height: 100%;
+}
 
-    #header {
-        position: fixed;
-        height: 4em;
-        top: 0;
-        width: 100%;
-        background: black;
-        z-index: 1;
-        border-bottom: 1px solid black;
-    }
+body {
+    margin: 0;
+    background-image: url('../Images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100%;
+    padding-bottom: 4em;
+    font-family: 'Karla', sans-serif!important;
+    color: white!important;
+}
 
-    h1 {
-        text-align: center;
-        color: white!important;
-        margin-top: 0.2em!important;
-    }
+h1 {
+    text-align: center;
+    color: white!important;
+    margin-top: 0.2em!important;
+}
 
-    h3 {
-        margin-top: 0.5em!important;
-    }
+h3 {
+    margin-top: 0.5em!important;
+}
 
-    #nysl_logo {
-        position: fixed;
-        top: 0;
-        width: 3em;
-        margin: 0.5em 0 0.5em 0.5em;
-    }
+.nextgame_logo {
+    width: 2em;
+}
 
-    .nextgame_logo {
-        width: 2em;
-    }
+#footer {
+    position: fixed;
+    bottom: 0;
+    background-color: black !important;
+    padding: 0;
+    border-top: 1px solid black;
+    margin-bottom: 0 !important;
+    height: 4em !important;
+    width: 100%;
+    display: none;
+}
 
-    #footer {
-        position: fixed;
-        bottom: 0;
-        background-color: black !important;
-        padding: 0;
-        border-top: 1px solid black;
-        margin-bottom: 0 !important;
-        height: 4em !important;
-        width: 100%;
-    }
+#footer span {
+    font-size: 2em;
+    color: white;
+    margin-top: 0.5em;
+}
 
-    #footer span {
-        font-size: 2em;
-        color: white;
-        margin-top: 0.5em;
-    }
+#team_detail ul {
+    list-style: none;
+    text-align: justify;
+}
 
-    #team_detail ul {
-        list-style: none;
-        text-align: justify;
-    }
+#teams_page img {
+    width: 3em;
+    margin: 1em;
+}
 
-    #teams_page img {
-        width: 3em;
-        margin: 1em;
-    }
+#teams_div {
+    font-size: 0.8em;
+}
 
-    #teams_div {
-        font-size: 0.8em;
-    }
+#teams_page a {
+    color: black;
+}
 
-    #teams_page a {
-        color: black;
-    }
 
-    #teams_page a:hover {
-        text-decoration: none;
-    }
+#register_page,
+#games_page,
+#teams_page,
+#teams_detail_page,
+#stats_page,
+#contact_page,
+#rules_page,
+#about_page,
+#home_page {
+    display: none;
+}
 
-    #register_page,
-    #games_page,
-    #teams_page,
-    #teams_detail_page,
-    #stats_page,
-    #contact_page,
-    #rules_page,
-    #about_page {
-        display: none;
-    }
+#teams_page {
+    font-size: 1.1em;
+    font-weight: bold;
+}
 
-    #teams_page {
-        font-size: 1.1em;
-        font-weight: bold;
-    }
+#detail {
+    text-decoration: none;
+    list-style: none;
+    text-align: justify;
+    font-size: 1.5em;
+}
 
-    #detail {
-        text-decoration: none;
-        list-style: none;
-        text-align: justify;
-        font-size: 1.5em;
-    }
+#stats_body img {
+    width: 1.5em;
+}
 
-    #stats_body img {
-        width: 1.5em;
-    }
+#stats_page th {
+    padding-left: 0em;
+    padding-right: 0.2em;
+}
 
-    #stats_page th {
-        padding-left: 0em;
-        padding-right: 0.2em;
-    }
+.justify_name {
+    text-align: left;
+}
 
-    .justify_name {
-        text-align: left;
-    }
+.team_image {
+    width: 10em;
+    margin-bottom: 1.5em;
+}
 
-    .team_image {
-        width: 10em;
-        margin-bottom: 1.5em;
-    }
+#games_page a {
+    color: white;
+    font-weight: bold;
+}
 
-    #games_page a {
-        color: black;
-        font-weight: bold;
-    }
+#hamburger {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding-right: 3em;
+    padding-bottom: 0.4em;
+}
 
-    #hamburger {
-        margin-top: 0.5em;
-        position: fixed;
-        top: 0;
-        right: 0;
-    }
+#hamburger span, #home_page a {
+    color: white;
+}
 
-    #hamburger span {
-        color: white;
-    }
+.glyphicon.glyphicon-menu-hamburger {
+    font-size: 2em;
+}
 
-    .glyphicon.glyphicon-menu-hamburger {
-        font-size: 2em;
-    }
+#hamburger .btn-secondary {
+    padding: 0;
+    background: none;
+}
 
-    #hamburger .btn-secondary {
-        background: black;
-    }
+#dropdown_menu {
+    background: black!important;
+    text-align: center;
+}
 
-    #dropdown_menu {
-        background: black!important;
-        text-align: center;
-        width: 5px!important;
-    }
+#dropdown_menu hr {
+    margin: 0;
+}
 
-    #dropdown_menu hr {
-        margin: 0;
-    }
+#dropdown_menu button {
+    margin: 0.5em 0 0.5em 0;
+    background: black;
+    border: none;
+}
 
-    #dropdown_menu button {
-        margin: 0.2em 0 0.2em 0;
-        background: black;
-        border: none;
-    }
+#contact_page a,
+#next_game a {
+    color: white;
+}
 
-    #contact_page a,
-    #next_game a {
-        color: black;
-    }
+#rules_page h5,
+#rules_page h4,
+#rules_page h3 {
+    text-align: center;
+}
 
-    #next_game {
-        color: black;
-        margin-bottom: 0;
-        width: 100%;
-        margin-right: 0;
-        margin-left: 0;
-        border-bottom: 1px solid black;
-    }
+#rules_page li,
+#rules_page p {
+    text-align: justify;
+}
 
-    #rules_page h5,
-    #rules_page h4,
-    #rules_page h3 {
-        text-align: center;
-    }
+#footer ul {
+    border-top: 1px solid black;
+}
 
-    #rules_page li,
-    #rules_page p {
-        text-align: justify;
-    }
+#login_page a,
+#register_page a {
+    background: black!important;
+    color: white!important;
+}
 
-    #footer ul {
-        border-top: 1px solid black;
-    }
+#login_div {
+    padding-top: 0.5em;
+    padding-bottom: 2em;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 0;
+}
 
-    #home_page #login_div a,
-    #register_page a {
-        background: black;
-        color: white;
-    }
 
-    #login_div {
-        /*  background: url('../Images/field2.jpg');
-        background-size: cover;*/
-        border-bottom: 1px solid black;
-        padding-bottom: 0.5em;
-        color: black;
-        width: 100%;
-        margin-right: 0;
-        margin-left: 0;
-    }
+#games_page hr {
+    margin-top: 0;
+}
 
-    #home_page_container {
-        width: 100%;
-        padding: 0;
-        margin: 0;
-    }
+#news p {
+    margin-left: 0.5em;
+}
 
-    #games_page hr {
-        margin-top: 0;
-    }
+#back_btn {
+    background-color: black;
+    padding: 1em;
+    margin-right: -17em;
+    margin-bottom: -2em;
+}
 
-    #news p {
-        margin-left: 0.5em;
-    }
+#opacity {
+    background-image: url('../Images/soccer2.jpg');
+    background-size: cover;
+    background-position: center;
+    position: fixed;
+    top: 0;
+    bottom: 0;  
+    left: 0;
+    right: 0;
+    z-index: -2;
+}
 
-    #back_btn {
-        background-color: black;
-        padding: 1em;
-        margin-right: -17em;
-        margin-bottom: -2em;
-    }
+#background {
+    background: rgba(0, 50, 50, 0.5);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+#login_page h5 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+input {
+    background-color: #033949!important
+}
+
+.form-control {
+    color: white!important;
+}
+
+.flex_logo img {
+    margin-top: 1em;
+    width: 15em;
+    margin-bottom: 1em;
+}
+
+.flex_logo {
+    text-align: center;
+}
+
+#proceed_btn {
+  margin-top: 8em;
+}
+
+.item {
+    width: 100%;
+    height: 20em;
+    color: white;
+    /*background: rgba(0, 70, 90, 0.3);*/
+}
+
+.carousel-control {
+    background-image: none!important;
+}
+
+#teamMonthList img {
+    width: 6em;
+}
+
+#teamMonthList {
+    list-style: none;
+    padding: 0;
+}
+
+#teamOfTheMonth {
+    text-align: center;
+}
+
+.bigger {
+    font-size: 2em;
+}
+
+#home_page {
+    height: 100%;
+}
+
+#games_page span, #home_page .glyphicon-map-marker { 
+    color: red;
+}
