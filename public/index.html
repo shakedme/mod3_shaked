@@ -11,16 +11,18 @@
     <link href="https://fonts.googleapis.com/css?family=Karla" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
     <link rel="stylesheet" type="text/css" href="CSS/bootstrap.min.css">
+    <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <!-- update the version number as needed -->
-<!--      <script defer src="/__/firebase/4.8.1/firebase-app.js"></script>
- -->    <!-- include only the Firebase features as you need -->
- <!--      <script defer src="/__/firebase/4.8.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/4.8.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/4.8.1/firebase-auth.js"></script>
     <script defer src="/__/firebase/4.8.1/firebase-database.js"></script>
     <script defer src="/__/firebase/4.8.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/4.8.1/firebase-storage.js"></script> -->
+    <!--     <script defer src="/__/firebase/4.8.1/firebase-storage.js"></script>
+ -->
     <!-- initialize the SDK after all desired features are loaded -->
-<!--      <script defer src="/__/firebase/init.js"></script>
- --></head>
+    <script defer src="/__/firebase/init.js"></script>
+</head>
 
 <body>
     <section id="login_page">
@@ -28,24 +30,40 @@
         <div id="login_page_container" class="container">
             <div class="row" id="login_div">
                 <div id="login_12" class="col-xs-12">
-                    <div class="form-login">
-                        <input type="text" id="userNameLogin" class="form-control input-xs chat-input" placeholder="Username" />
+                    <div class="form-login row">
+                        <input type="text" id="email" class="form-control input-xs chat-input" placeholder="Email" />
                         <br>
-                        <input type="password" id="userPasswordLogin" class="form-control input-xs chat-input" placeholder="Password" />
+                        <input type="password" id="password" class="form-control input-xs chat-input" placeholder="Password" />
                         <br>
-                        <div class="wrapper">
-                            <span class="group-btn">     
-                <a id="login_btn" href="#" class="btn btn-dark btn-md">Login <i class="fa fa-sign-in"></i></a>
-            </span><span class="group-btn pull-right"><a id="register_btn" data-content="register_page" href="#" class="btn btn-dark btn-md">Register<i class="fa fa-sign-in"></i></a>
-            </span>
+                        <div class="row" id="flex_buttons">
+                            <button id="sign-in" name="signin">Login</button>
+                            <button id="logout" class="hidden" name="logout">Logout</button>
+                        </div>
+                        <div class="container text-center" id="new_user">
+                            <p>New user? Sign up.</p>
+                            <button id="register" name="signup">Register</button>
                         </div>
                     </div>
                 </div>
             </div>
-            <h5 data-content="home_page" id="proceed_btn">Proceed without signing in</h5>
+        </div>
+        <h5 data-content="home_page" id="proceed_btn">Proceed without signing in</h5>
     </section>
     <div id="background"></div>
     <div id="opacity"></div>
+    <!-- After LOGIN page
+
+
+     -->
+    <section id="after_login">
+        <div class="container text-center">
+            <div class="flex_logo"> <img src="../Images/nysl_logo.png"></div>
+            <h2>Welcome</h2>
+            <p>You are currently logged in as <span id="loggedUser"></span>
+            </p>
+            <button class="home_btn" id="after_login_btn" data-content="home_page">Homescreen</button>
+        </div>
+    </section>
     <!-- HOME PAGE
 
 
@@ -103,7 +121,7 @@
                     </div>
                 </div>
                 <div id="teamOfTheMonth" class="carousel-item item">
-                    <h3>Team of the Month:</h3>
+                    <h3><strong>Team of the Month:</strong></h3>
                     <ul id="teamMonthList"></ul>
                 </div>
             </div>
@@ -167,7 +185,7 @@
             <h3 class="text-center"><strong>Upcoming Matches</strong></h3></header>
         <br>
         <div class="container">
-            <div class="row">
+            <div class="row games_box">
                 <div data-name="Siths" class="col-xs-3 team_specific text-center"><img alt="logo" class="nextgame_logo text-center" src="../Images/12.png"> Siths
                 </div>
                 <div class="col-xs-6 text-center">
@@ -297,14 +315,12 @@
             </table>
         </div>
     </section>
-<!--
+    <!--
 
 
  Contact Page
 
  -->
-
-        
     <section class="text-center" id="contact_page">
         <div class="container">
             <h3><strong>Contact</strong></h3>
@@ -441,43 +457,71 @@
     <nav id="footer">
         <div class="container">
             <div class="row">
-                <div class="col-xs-3 text-center"> <span data-content="home_page" id="home_btn" class="glyphicon glyphicon-home"></span></div>
+                <div class="col-xs-3 text-center"> <span data-content="home_page" class="glyphicon glyphicon-home home_btn"></span></div>
                 <div class="col-xs-3 text-center"> <span data-content="stats_page" id="teams_btn" class="glyphicon glyphicon-stats"></span></div>
                 <div class="col-xs-3 text-center"> <span data-content="games_page" id="games_btn" class="glyphicon glyphicon-calendar"></span></div>
-                <div class="col-xs-3 text-center">
-                    <div id="hamburger" class="btn-group dropup">
-                        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="glyphicon glyphicon-menu-hamburger"></span>
-                        </button>
-                        <div id="dropdown_menu" class="dropdown-menu dropdown-menu-right text-center">
-                            <button data-content="login_page" id="login_btn_bottom" class="btn btn-primary dropdown-item" type="button">Login/Register</button>
-                            <hr>
-                            <button data-content="teams_page" id="teams_btn" class="btn btn-primary dropdown-item" type="button">Teams</button>
-                            <hr>
-                            <button data-content="about_page" id="about_btn" class="btn btn-primary dropdown-item" type="button">About</button>
-                            <hr>
-                            <button data-content="contact_page" id="contact_btn" class="btn btn-primary dropdown-item" type="button">Contact</button>
-                            <hr>
-                            <button data-content="rules_page" id="rules_btn" class="btn btn-primary dropdown-item" type="button">FIFA Rules</button>
-                            <hr>
-                            <button class="btn btn-primary dropdown-item" type="button">Settings</button>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-xs-3 text-center"> <span data-content="teams_page" id="teams_btn" class="glyphicon glyphicon-user"></span></div>
             </div>
         </div>
+    </nav>
+    <section id="messages_page">
+        <h2 class="text-center">Message Board</h2>
+        <div id="message_div">
+            <input id="text" type="text" placeholder=" Message">
+            <button id="post">Post</button>
+            <div id="results" class="container"></div>
+    </section>
+    <!-- Animated Nav
+
+
+
+     -->
+    <nav id="new_nav" class="navbar navbar-fixed-left navbar-minimal animate" role="navigation">
+        <div class="navbar-toggler animate">
+            <span class="menu-icon"></span>
+        </div>
+        <ul class="navbar-menu animate">
+            <li>
+                <a data-content="messages_page" id="messages_btn" class="animate">
+                    <span  class="desc animate"> Message Board </span>
+                    <span class="glyphicon glyphicon-comment"></span>
+                </a>
+            </li>
+            <li>
+                <a data-content="about_page" id="about_btn" class="animate">
+                    <span class="desc animate"> About Us </span>
+                    <span class="glyphicon glyphicon-info-sign"></span>
+                </a>
+            </li>
+            <li>
+                <a data-content="contact_page" id="contact_btn"  class="animate">
+                    <span class="desc animate"> Contact </span>
+                    <span class="glyphicon glyphicon-envelope"></span>
+                </a>
+            </li>
+            <li>
+                <a data-content="rules_page" id="rules_btn" class="animate">
+                    <span data-content="rules_page" class="desc animate"> FIFA Rules </span>
+                    <span class="glyphicon glyphicon-comment"></span>
+                </a>
+            </li>
+            <li>
+                <a data-content="login_page" id="login_btn" class="animate">
+                    <span class="desc animate"> Login/Logout </span>
+                    <span class="glyphicon glyphicon-comment"></span>
+                </a>
+            </li>
+        </ul>
     </nav>
     <!-- SCRIPTS
 
 
 
      -->
-<!--     <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
- -->    <script type="text/javascript" src="JS/jquery.min.js">
+    <script type="text/javascript" src="JS/jquery.min.js">
     </script>
     <script type="text/javascript" src="JS/bootstrap.min.js"></script>
     <script type="text/javascript" src="JS/script.js"></script>
-<!--       <script type="text/javascript" src="JS/main.js"></script>
- --></body>
+</body>
 
 </html>
