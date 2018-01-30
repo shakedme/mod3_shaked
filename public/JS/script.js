@@ -1,4 +1,5 @@
  // Initialize Firebase
+
  var config = {
      apiKey: "AIzaSyANj7FOcSjM85VPKOHY-TZDJIcuZUHr8jA",
      authDomain: "shaked-nysl-app.firebaseapp.com",
@@ -33,9 +34,9 @@
 
      this.teamData = "";
 
-     //Retrieving data from local JSON file
+     //Retrieving data from local JSON file and initializing all methods
 
-     this.getData = function() {
+     this.init = function() {
          var that = this;
          $.getJSON("../data/teams.json", function(data) {
              that.teamData = data;
@@ -46,9 +47,18 @@
              that.footerShow();
              that.chatNav();
              that.teamOfTheMonth();
+             that.navBar();
          });
      };
 
+     //Method for animating top Navbar.
+
+     this.navBar = function() {
+         $('.navbar-toggler').on('click', function(event) {
+             event.preventDefault();
+             $(this).closest('.navbar-minimal').toggleClass('open');
+         });
+     }
      //Show footer on change from LOGIN screen.
 
      this.footerShow = function() {
@@ -106,12 +116,16 @@
          });
      };
 
+     //Method for navigation to chat page, requires own method
+     //due to needed Authorization
+
      this.chatNav = function() {
-         $('#chat_btn_bottom').on('click', function() {
+         $('#messages_btn').on('click', function() {
              if (firebase.auth().currentUser) {
                  $('section').slideUp('slow');
                  $('#messages_page').slideDown('slow');
-                 $('body').css('padding-bottom', '7.5em');
+                 $('body').css('padding-bottom', '8em');
+                 $('.open').removeClass('open');
              } else {
                  alert('You must be logged in to use this feature.');
              }
@@ -122,11 +136,14 @@
      //Click event for navigation
 
      this.bottomNav = function() {
-         $('#teams_btn, #messages_btn, #games_btn, .home_btn, #about_btn, #proceed_btn, #login_btn, #register_btn, #next_game, #contact_btn, #rules_btn, #stats_btn').on('click', function() {
+         $('#teams_btn, #games_btn, .home_btn, #about_btn, #proceed_btn, #login_btn, #register_btn, #next_game, #contact_btn, #rules_btn, #stats_btn').on('click', function() {
              var content = $(this).data('content');
+             $('.open').removeClass('open');
              $('body').css('padding-bottom', '4em');
              $('section').slideUp('slow');
              $('#' + content).slideDown('slow');
+             $('.iconShine').removeClass('iconShine');
+             $(this).addClass('iconShine');
          });
      };
 
@@ -158,7 +175,11 @@
 
  var mainHandler = new MainHandler();
 
- mainHandler.getData();
+ mainHandler.init();
+
+
+/*-------------------------------------------------------------*/
+
 
 
  //Setting  CONST
@@ -174,6 +195,7 @@
  function LoginHandler() {
 
      //Initalize all methods
+
      this.init = function() {
          this.signin();
          this.signout();
@@ -212,6 +234,9 @@
          });
      };
 
+     //Monitor for authorization state; Whether user is logged in or not.
+     //If yes - etc.
+     //If not - etc.
 
      this.authStateChange = function() {
          $(document).ready(function() {
@@ -240,61 +265,82 @@
  loginHandler.init();
 
 
- //Creating messaging
+/*---------------------------------------------------------------------*/
 
 
- var db = firebase.database();
- var text = $('#text').val();
- var post = $('#post');
-
- post.on('click', function() {
-     db.ref('posts/').push({ username: firebase.auth().currentUser.email, text: $('#text').val() });
-     $('#text').val("");
- });
+ //Creating messaging class
 
 
- /** Function to add a data listener **/
- var startListening = function() {
-     db.ref().on('child_added', function(snapshot) {
-         var msg = snapshot.val();
-         var key = snapshot.key;
+ function Messaging() {
 
-         var deletePost = document.createElement("button");
-         deletePost.classList.add('deleteMsgBtn');
-         deletePost.textContent = 'Delete';
-         deletePost.addEventListener('click', function() {
-             this.parentNode.remove();
-             db.ref(key).remove();
-         });
+    //Setting VARIABLES
 
-         var msgUsernameElement = document.createElement("b");
-         msgUsernameElement.textContent = msg.username;
-         var msgTextElement = document.createElement("p");
-         msgTextElement.textContent = msg.text;
+     this.db = firebase.database();
+     this.msgPost = $('#post');
 
-         var msgElement = document.createElement("div");
-         msgElement.appendChild(msgUsernameElement);
-         msgElement.appendChild(msgTextElement);
-         msgElement.appendChild(deletePost);
+     //Initialize methods
 
-         msgElement.className = "msg";
-         document.getElementById("results").appendChild(msgElement);
-     });
- }
-
- // Begin listening for data
- startListening();
-
- function Messages() {
-
-     this.bodyPadding = function() {
-         if ($('#messages_page').css('display', 'block')) {
-
-         }
+     this.init = function(){
+        this.postMessage();
+        this.msgListener();
      };
+
+     //Click event for posting messages to firebase DB
+
+     this.postMessage = function() {
+        var that = this;
+         this.msgPost.on('click', function() {
+             that.db.ref('posts/').push({ username: firebase.auth().currentUser.email, text: $('#text').val() });
+             $('#text').val("");
+         });
+     };
+
+     //Event listener for new posts sent to DB, and presenting them in HTML.
+     // + Making a delete button for each post; HTML and DB.
+
+     this.msgListener = function() {
+        var that = this;
+        this.db.ref('posts/').on('child_added', function(snapshot) {
+             var msg = snapshot.val();
+             var key = snapshot.key;
+
+             //Create DELETE button
+
+             var deletePost = document.createElement("button");
+             deletePost.classList.add('deleteMsgBtn');
+             deletePost.textContent = 'Delete';
+             deletePost.addEventListener('click', function() {
+             
+                //Remove HTML
+                 this.parentNode.remove();
+
+                 //Remove from database
+                 that.db.ref('posts/' + key).remove();
+             });
+
+             //Create elements and append content.
+
+             var msgUsernameElement = document.createElement("b");
+             msgUsernameElement.textContent = msg.username;
+             var msgTextElement = document.createElement("p");
+             msgTextElement.textContent = msg.text;
+             var msgElement = document.createElement("div");
+
+             //Append to containing DIV
+
+             msgElement.appendChild(msgUsernameElement);
+             msgElement.appendChild(msgTextElement);
+             msgElement.appendChild(deletePost);
+
+             msgElement.className = "msg";
+
+             //Append to pre existing HTML <DIV>
+
+             document.getElementById("results").appendChild(msgElement);
+         });
+     }
  };
 
- $('.navbar-toggler').on('click', function(event) {
-     event.preventDefault();
-     $(this).closest('.navbar-minimal').toggleClass('open');
- });
+
+var messaging = new Messaging();
+messaging.init();

@@ -1,20 +1,14 @@
 body {
     margin: 0;
     background-image: url('../Images/b.jpg');
-    background-attachment: fixed;
+    background-size: cover;
     padding-bottom: 4em;
+    min-height: 100vh;
     font-family: 'Karla', sans-serif!important;
     color: black!important;
 }
-
-h1 {
-    text-align: center;
-    color: white!important;
-    margin-top: 0.2em!important;
-}
-
-h3 {
-    margin-top: 0.5em!important;
+h2 {
+    margin-top: 0.7em!important;
 }
 
 .nextgame_logo {
@@ -24,7 +18,7 @@ h3 {
 #footer {
     position: fixed;
     bottom: 0;
-    background-color: black !important;
+    background-color: #033949 !important;
     padding: 0;
     border-top: 1px solid black;
     margin-bottom: 0 !important;
@@ -71,6 +65,29 @@ h3 {
 #messages_page,
 #new_nav {
     display: none;
+}
+
+#sign-in,
+#logout,
+#register,
+#after_login_btn,
+#back_btn {
+    width: 40%;
+    background: #033949;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.3em;
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+}
+
+#back_btn {
+    margin-top: 2em;
+}
+
+#new_nav hr {
+    margin: 0!important;
 }
 
 #teams_page {
@@ -149,12 +166,6 @@ h3 {
 }
 
 
-
-/*#contact_page a,
-#next_game a {
-    color: white;
-}*/
-
 #rules_page h5,
 #rules_page h4,
 #rules_page h3 {
@@ -170,13 +181,10 @@ h3 {
     border-top: 1px solid black;
 }
 
-#login_page a,
-#register_page a {
-    background: black!important;
-    color: white!important;
-}
 
-#login_page button {
+
+#login_page button,
+#after_login button {
     color: white!important;
 }
 
@@ -189,7 +197,8 @@ h3 {
 }
 
 
-#games_page hr {
+#games_page hr,
+#home_page hr {
     margin-top: 0;
     border-top: 1px solid black;
 }
@@ -197,40 +206,6 @@ h3 {
 #news p {
     margin-left: 0.5em;
 }
-
-#back_btn {
-    background-color: black;
-    padding: 1em;
-    margin-right: -17em;
-    margin-bottom: -2em;
-}
-
-
-
-/*#opacity {
-    background-image: url('../Images/soccer2.jpg');
-    background-size: cover;
-    background-position: center;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -2;
-}*/
-
-
-/*
-#background {
-    background: rgba(0, 50, 50, 0.5);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    overflow: hidden;
-}*/
 
 #login_page h5 {
     text-align: center;
@@ -248,7 +223,11 @@ input {
 .flex_logo img {
     margin-top: 1em;
     width: 15em;
-    margin-bottom: 1em;
+    margin-bottom: 3.5em;
+}
+
+.iconShine {
+    text-shadow: 4px 4px 9px #000;
 }
 
 .flex_logo {
@@ -291,13 +270,23 @@ input {
     overflow: hidden;
 }
 
-#games_page span,
-#home_page .glyphicon-map-marker {
-    color: red;
+.glyphicon-map-marker {
+    color: red!important;
 }
 
-#login_page button,
-#after_login_btn {
+#chevron span {
+    color: black;
+}
+
+#home_page a {
+    color: #000!important;
+}
+
+#login_page {
+    overflow: hidden;
+}
+
+#login_page button {
     background: #033949;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -321,30 +310,39 @@ input {
     padding: 1em;
     width: 100%;
     height: auto;
-    background-color: white;
+    background-color: lavender;
     border-radius: 5px;
 }
 
 #text {
     position: fixed;
-    bottom: 4em;
-    width: 80%;
+    bottom: 4.5em;
+    left: 0.5em;
+    width: 75%;
     background: white!important;
     color: black;
-    border-radius: 5px;
+    border: none;
+    border-radius: 10px;
     height: 3em;
+    outline: none;
+    padding-left: 0.4em;
 }
 
 #post {
     padding: 0.5em 1em;
     background-color: #033949;
-    border-radius: 5px;
+    border-radius: 20px;
     color: white;
     position: fixed;
-    bottom: 4em;
-    right: 0;
+    bottom: 4.5em;
+    right: 0.5em;
     height: 3em;
     width: 20%;
+    outline: none;
+}
+
+#text:focus {
+    box-shadow: 0 0 3px 3px rgba(0, 50, 50, 0.5);
 }
 
 .deleteMsgBtn {
@@ -373,9 +371,9 @@ input {
 
 .navbar-fixed-left {
     position: fixed!important;
-    top: 0px;
-    left: 0px;
-    border-radius: 10px;
+    top: 5px;
+    left: 2px;
+    border-radius: 50px;
 }
 
 .navbar-minimal {
@@ -391,7 +389,6 @@ input {
 .navbar-minimal>.navbar-toggler {
     position: relative;
     min-height: 60px;
-    border-bottom: 1px solid rgb(81, 81, 81);
     z-index: 100;
     cursor: pointer;
 }
@@ -451,7 +448,7 @@ input {
     text-align: left;
     cursor: pointer;
     border-bottom: 1px solid rgb(81, 81, 81);
-    width: 100%;
+    width: 95%;
     text-decoration: none;
     margin: 0px;
 }
@@ -485,4 +482,5 @@ input {
     top: 60px;
     width: 100%;
     min-height: 100%;
+    border-radius: 5px;
 }
