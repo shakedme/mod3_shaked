@@ -1,14 +1,41 @@
 body {
-    margin: 0;
-    background-image: url('../Images/b.jpg');
-    background-size: cover;
-    padding-bottom: 4em;
+    margin-top: 0;
+    background-image: url('../Images/gameback.png');
+    /*  background-image: -ms-linear-gradient(bottom, #033949 0%, #FFFFFF 100%);
+
+        background-image: -moz-linear-gradient(bottom, #033949 0%, #FFFFFF 100%);
+
+        background-image: -o-linear-gradient(bottom, #033949 0%, #FFFFFF 100%);
+
+        background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #033949), color-stop(100, #FFFFFF));
+
+        background-image: -webkit-linear-gradient(bottom, #033949 0%, #FFFFFF 100%);
+
+        background-image: linear-gradient(to top, #033949 0%, #FFFFFF 100%);*/
     min-height: 100vh;
     font-family: 'Karla', sans-serif!important;
     color: black!important;
+    overflow: hidden;
 }
+
 h2 {
     margin-top: 0.7em!important;
+}
+
+strong,
+h3,
+h4,
+h5 {
+    text-shadow: 2px 2px 3px rgba(150, 150, 150, 1);
+}
+
+#games_page p strong {
+    font-size: 2em;
+}
+
+#rules_page ul,
+#rules_page ol {
+    padding-left: 20px;
 }
 
 .nextgame_logo {
@@ -38,18 +65,47 @@ h2 {
     text-align: justify;
 }
 
+#detail {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+    background-image: -ms-linear-gradient(right, #033949 0%, #FFFFFF 100%);
+
+    background-image: -moz-linear-gradient(right, #033949 0%, #FFFFFF 100%);
+
+    background-image: -o-linear-gradient(right, #033949 0%, #FFFFFF 100%);
+
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #033949), color-stop(100, #FFFFFF));
+
+    background-image: -webkit-linear-gradient(right, #033949 0%, #FFFFFF 100%);
+
+    background-image: linear-gradient(to left, #033949 0%, #FFFFFF 100%);
+    padding: 0.5em 0 0.5em 0.5em; 
+}
+
+#detail li {
+    text-shadow: 2px 2px 3px rgba(150, 150, 150, 1);
+}
+
 #teams_page img {
-    width: 3em;
+    width: 5em;
     margin: 1em;
 }
 
 #teams_div {
-    font-size: 0.8em;
+    font-size: 0.85em;
+}
+
+#teams_div .row {
+    margin-bottom: 1em;
 }
 
 #teams_page a {
     color: black;
 }
+
 
 
 #register_page,
@@ -84,6 +140,7 @@ h2 {
 
 #back_btn {
     margin-top: 2em;
+    margin-right: 1em;
 }
 
 #new_nav hr {
@@ -181,8 +238,6 @@ h2 {
     border-top: 1px solid black;
 }
 
-
-
 #login_page button,
 #after_login button {
     color: white!important;
@@ -190,7 +245,7 @@ h2 {
 
 #login_div {
     padding-top: 0.5em;
-    padding-bottom: 2em;
+    padding-bottom: 1em;
     width: 100%;
     margin-right: 0;
     margin-left: 0;
@@ -202,6 +257,7 @@ h2 {
     margin-top: 0;
     border-top: 1px solid black;
 }
+
 
 #news p {
     margin-left: 0.5em;
@@ -221,7 +277,7 @@ input {
 }
 
 .flex_logo img {
-    margin-top: 1em;
+    margin-top: 1.3em;
     width: 15em;
     margin-bottom: 3.5em;
 }
@@ -235,7 +291,8 @@ input {
 }
 
 #proceed_btn {
-    margin-top: 3em;
+    margin-top: 2.2em;
+    color: black;
 }
 
 .item {
@@ -310,7 +367,17 @@ input {
     padding: 1em;
     width: 100%;
     height: auto;
-    background-color: lavender;
+    background-image: -ms-linear-gradient(right, #033949 0%, #FFFFFF 100%);
+
+    background-image: -moz-linear-gradient(right, #033949 0%, #FFFFFF 100%);
+
+    background-image: -o-linear-gradient(right, #033949 0%, #FFFFFF 100%);
+
+    background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #033949), color-stop(100, #FFFFFF));
+
+    background-image: -webkit-linear-gradient(right, #033949 0%, #FFFFFF 100%);
+
+    background-image: linear-gradient(to left, #033949 0%, #FFFFFF 100%);
     border-radius: 5px;
 }
 
@@ -483,4 +550,37 @@ input {
     width: 100%;
     min-height: 100%;
     border-radius: 5px;
+}
+
+.form-login {
+    border: 1px solid black;
+    background-image: -ms-linear-gradient(top left, #033949 0%, #FFFFFF 100%);
+    background-image: -moz-linear-gradient(top left, #033949 0%, #FFFFFF 100%);
+    background-image: -o-linear-gradient(top left, #033949 0%, #FFFFFF 100%);
+    background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0, #033949), color-stop(100, #FFFFFF));
+    background-image: -webkit-linear-gradient(top left, #033949 0%, #FFFFFF 100%);
+    background-image: linear-gradient(to bottom right, #033949 0%, #FFFFFF 100%);
+    padding: 1em;
+    -webkit-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 19px 0px rgba(0, 0, 0, 0.75);
+    border-radius: 20px;
+}
+
+#games_page .row {
+    background: url('../Images/playstation-pattern.png');
+    border: 2px solid #033949;
+    border-radius: 20px;
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 1em;
+    margin-bottom: 1em;
+    -webkit-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.75);
+}
+
+#games_page .col-xs-3 {
+    font-weight: bold;
+    text-shadow: 1px 2px solid black;
 }
