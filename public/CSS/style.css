@@ -1,17 +1,6 @@
 body {
     margin-top: 0;
     background-image: url('../Images/gameback.png');
-    /*  background-image: -ms-linear-gradient(bottom, #033949 0%, #FFFFFF 100%);
-
-        background-image: -moz-linear-gradient(bottom, #033949 0%, #FFFFFF 100%);
-
-        background-image: -o-linear-gradient(bottom, #033949 0%, #FFFFFF 100%);
-
-        background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #033949), color-stop(100, #FFFFFF));
-
-        background-image: -webkit-linear-gradient(bottom, #033949 0%, #FFFFFF 100%);
-
-        background-image: linear-gradient(to top, #033949 0%, #FFFFFF 100%);*/
     min-height: 100vh;
     font-family: 'Karla', sans-serif!important;
     color: black!important;

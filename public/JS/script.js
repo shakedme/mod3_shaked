@@ -221,7 +221,7 @@
      //Register method
 
      this.register.on('click', function() {
-         const promise = auth.createUserWithEmailAndPassword($('#email').val(), $('#password').val());
+         const promise = that.auth.createUserWithEmailAndPassword($('#email').val(), $('#password').val());
          promise.catch(e =>
              alert(e.message));
      });
@@ -306,7 +306,6 @@
          this.loginHandler.init();
      }
  }
-
 
  var initializer = new Initializer();
  initializer.init();
